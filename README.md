@@ -8,6 +8,8 @@ Credits to:
 - [OG Issuer](https://github.com/unjs/nitro/discussions/334#discussioncomment-6347102)
 - [Adaptation](https://github.com/unjs/nitro/discussions/334#discussioncomment-6353721)
 
+Start by adding `fs`, `ua-parser-js` and `morgan` to your Nitro project.
+
 1. Create a new file in your `./server/utils` folder called `logger.ts` or in my case `freeman.ts`, not really relevant.
 Add the following code:
 
