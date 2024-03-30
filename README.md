@@ -78,4 +78,4 @@ and append it too `access.log` at the root of your workspace.
 
 Always use writeStreams and don't block the event loop with sync write to disk Ops.
 If you want to optimize, forward your requests to another standalone Nitro server or third party service, 
-just for logging.
+just for logging. Or you could use Nitro Tasks (scheduled CRON jobs) to clean up the file every 24h.
