@@ -72,6 +72,26 @@ export default defineEventHandler((event) => {
 })
 ```
 
+Example with Log splitting
+```ts
+export default defineEventHandler((event) => {
+    if (getRequestURL(event).pathname === '/') {
+        logger(event.node.req, event.node.res, function () {
+            // Optional callback function for handling errors or additional logic
+            console.log("Logged:", getRequestURL(event).pathname)
+            return;
+        });
+    }
+
+    if (getRequestURL(event).pathname === '/specific-path') {
+        logger(event.node.req, event.node.res, function () {
+            console.log("Logged:", getRequestURL(event).pathname)
+            return;
+        });
+    }
+})
+```
+
 That's it.
 The log util should automagicaly fire with every incoming request or response
 and append it too `access.log` at the root of your workspace.
